@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Default font styles */
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: var(--r14);
+  line-height: 1.5rem;
+
+  /* ### Primary -------------------- */
+  --lime-green: hsl(163, 72%, 41%);
+  --bright-red: hsl(356, 69%, 56%);
+
+  --facebook: hsl(208, 92%, 53%);
+  --twitter: hsl(203, 89%, 53%);
+  --instagram: linear-gradient(to left, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+  --youtube: hsl(348, 97%, 39%);
+
+  /* #### Dark Theme */
+  --toggle-dk: linear-gradient(45deg, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+
+  /* #### Light Theme */
+  --toggle-lg: hsl(230, 22%, 74%);
+
+  /* ### Neutral -------------------- */
+
+  /* #### Dark Theme */
+  --very-dark-blue--bg: hsl(230, 17%, 14%);
+  --very-dark-blue--top_bg_pattern: hsl(232, 19%, 15%);
+  --dark-desaturated-blue--card_bg: hsl(228, 28%, 20%);
+  --desaturated-blue--text: hsl(228, 34%, 66%);
+  --white--text: hsl(0, 0%, 100%);
+
+  /* #### Light Theme */
+  --white--bg: hsl(0, 0%, 100%);
+  --very-pale-blue--top-bg-pattern: hsl(225, 100%, 98%);
+  --light-grayish-blue--card-bg: hsl(227, 47%, 96%);
+  --dark-grayish-blue--text: hsl(228, 12%, 44%);
+  --very-dark-blue--text: hsl(230, 17%, 14%);
+}
+
+html {
+  --r30: calc((30 / var(--base) * 1rem));
+  --r20: calc((20 / var(--base) * 1rem));
+  --r19: calc((19 / var(--base) * 1rem));
+  --r15: calc((15 / var(--base) * 1rem));
+  --r14: calc((14 / var(--base) * 1rem));
+  --r12: calc((12 / var(--base) * 1rem));
+  --r10: calc((10 / var(--base) * 1rem));
+  --base: 16;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Inherit fonts */
+input,
+button,
+textarea {
+  font: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* Body, main styles */
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+body.dark {
+  background-color: var(--very-dark-blue--bg);
+}
+
+.facebook {
+  border-top-color: var(--facebook);
+}
+
+.twitter {
+  border-top-color: var(--twitter);
+}
+
+.instagram {
+  border-image: var(--instagram);
+  border-image-slice: 1;
+}
+
+.youtube {
+  border-top-color: var(--youtube);
+}
+
+.switch {
+  font-size: var(--r15);
+  position: relative;
+  display: inline-block;
+  width: 4rem;
+  height: 2rem;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-shadow: inset 1px 2px 5px 1px rgba(0, 0, 0, 0.35);
+  transition: all .4s ease;
+  border-radius: var(--r30);
+}
+
+.slider:before {
+  content: "";
+  position: absolute;
+  height: 1.4rem;
+  width: 1.4rem;
+  border-radius: var(--r20);
+  right: 0.3rem;
+  bottom: 0.3rem;
+  background-color: var(--toggle-lg);
+  transition: all .4s ease;
+}
+
+.switch input:checked + .slider:before {
+  background-color: var(--dark-desaturated-blue--card_bg);
+}
+
+.switch input:checked + .slider {
+  background: var(--toggle-dk);
+}
+
+.switch input:focus + .slider {
+  box-shadow: inset 3px 2px 4px rgba(22, 22, 22, 0.25);
+}
+
+.switch input:checked + .slider:before {
+  transform: translateX(-2rem);
+}
