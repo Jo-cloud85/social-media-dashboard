@@ -8,9 +8,9 @@ const Followers = () => {
 
   return (
     <>
-      <section className='py-10 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4'>
+      <div className='py-10 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4'>
         {socialMediaData.map((fData, index) => (
-          <article 
+          <div 
             key={index} 
             className={`bg-slate-200 dark:bg-slate-800 p-5 rounded-b-lg shadow shadow-slate-50 dark:shadow-slate-700 border-t-4 ${fData.platform.toLowerCase()}`}>
             
@@ -37,9 +37,9 @@ const Followers = () => {
               {Math.abs(fData.today)} today
             </p>
             
-          </article>
+          </div>
         ))}
-      </section>
+      </div>
     </>
   )
 }

@@ -10,11 +10,11 @@ const Overview = () => {
     <>
       <h2 className='text-slate-600 dark:text-white text-3xl font-bold mt-8 md:text-3xl'>Overview - Today</h2>
 
-      <section className='py-10 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-rows-2 lg:grid-flow-col'>
+      <div className='py-10 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-rows-2 lg:grid-flow-col'>
         {socialMediaData.map((data, index) => ( 
-          <article key={index} className='grid grid-cols-1 gap-8 lg:grid-cols-2'>
+          <div key={index} className='grid grid-cols-1 gap-8 lg:grid-cols-2'>
             {['views', 'likes'].map((type) => (
-              <article 
+              <div 
                 key={type} 
                 className={`bg-slate-200 dark:bg-slate-800 p-5 rounded-b-lg shadow shadow-slate-50 dark:shadow-slate-700 border-t-4 ${data.platform.toLowerCase()}`}>
                 <ul className='flex items-center justify-between mb-5'>
@@ -36,11 +36,11 @@ const Overview = () => {
                     {Math.abs(data[`${type}PercentChange`])} %
                   </li>
                 </ul>
-              </article>
+              </div>
             ))}
-          </article>
+          </div>
         ))}
-      </section>
+      </div>
     </>
     
   )

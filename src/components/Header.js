@@ -24,21 +24,21 @@ const Header = () => {
 
   return (
     <>
-      <section className="flex flex-col md:flex-row md:items-center md:justify-between">
+      <div className="flex flex-col md:flex-row md:items-center md:justify-between">
         <div>
-          <h1 className="font-bold text-3xl md:text-4xl text-slate-800 dark:text-white">Social Media Dashboard</h1>
+          <p className="font-bold text-3xl md:text-4xl text-slate-800 dark:text-white">Social Media Dashboard</p>
           <p className="text-slate-600 font-bold dark:text-slate-400">Total Followers: {totalFollowers}</p>
         </div>
 
         {/* Toggle */}
         <div className="toggle flex items-center justify-between mt-6 md:mt-0 gap-4">
           <label htmlFor="switch" className="font-bold text-slate-600 dark:text-slate-400 cursor-pointer">Dark Mode</label>
-          <label className="switch">
+          <label className="switch" id="switch">
             <input type="checkbox" defaultChecked={darkMode} onClick={toggleTheme} />
             <span className="slider"></span>
           </label>
         </div>
-      </section>
+      </div>
     </>
   );
 };
